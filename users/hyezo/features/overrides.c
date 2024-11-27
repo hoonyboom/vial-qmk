@@ -1,0 +1,55 @@
+#include "overrides.h"
+
+const key_override_t up_key    = ko_make_basic(MOD_MASK_CTRL, KC_W, KC_UP);
+const key_override_t down_key  = ko_make_basic(MOD_MASK_CTRL, KC_S, KC_DOWN);
+const key_override_t left_key  = ko_make_basic(MOD_MASK_CTRL, KC_A, KC_LEFT);
+const key_override_t right_key = ko_make_basic(MOD_MASK_CTRL, KC_D, KC_RIGHT);
+const key_override_t drag_up_key        = ko_make_basic(MOD_MASK_CTRL, KC_I, LSFT(KC_UP));
+const key_override_t drag_down_key      = ko_make_basic(MOD_MASK_CTRL, KC_K, LSFT(KC_DOWN));
+const key_override_t drag_left_key      = ko_make_basic(MOD_MASK_CTRL, KC_J, LSFT(KC_LEFT));
+const key_override_t drag_right_key     = ko_make_basic(MOD_MASK_CTRL, KC_L, LSFT(KC_RIGHT));
+const key_override_t opt_up_key         = ko_make_basic(MOD_MASK_ALT, KC_I, LOPT(KC_UP));
+const key_override_t opt_down_key       = ko_make_basic(MOD_MASK_ALT, KC_K, LOPT(KC_DOWN));
+const key_override_t opt_left_key       = ko_make_basic(MOD_MASK_ALT, KC_J, LOPT(KC_LEFT));
+const key_override_t opt_right_key      = ko_make_basic(MOD_MASK_ALT, KC_L, LOPT(KC_RIGHT));
+const key_override_t drag_opt_up_key    = ko_make_basic(MOD_MASK_SHIFT | MOD_MASK_ALT, KC_I, LSA(KC_UP));
+const key_override_t drag_opt_down_key  = ko_make_basic(MOD_MASK_SHIFT | MOD_MASK_ALT, KC_K, LSA(KC_DOWN));
+const key_override_t drag_opt_left_key  = ko_make_basic(MOD_MASK_SHIFT | MOD_MASK_ALT, KC_J, LSA(KC_LEFT));
+const key_override_t drag_opt_right_key = ko_make_basic(MOD_MASK_SHIFT | MOD_MASK_ALT, KC_L, LSA(KC_RIGHT));
+const key_override_t cmd_up_key         = ko_make_basic(MOD_MASK_GUI, KC_I, LCMD(KC_UP));
+const key_override_t cmd_down_key       = ko_make_basic(MOD_MASK_GUI, KC_K, LCMD(KC_DOWN));
+const key_override_t cmd_left_key       = ko_make_basic(MOD_MASK_GUI, KC_J, LCMD(KC_LEFT));
+const key_override_t cmd_right_key      = ko_make_basic(MOD_MASK_GUI, KC_L, LCMD(KC_RIGHT));
+const key_override_t drag_cmd_up_key    = ko_make_basic(MOD_MASK_SHIFT | MOD_MASK_GUI, KC_I, LSG(KC_UP));
+const key_override_t drag_cmd_down_key  = ko_make_basic(MOD_MASK_SHIFT | MOD_MASK_GUI, KC_K, LSG(KC_DOWN));
+const key_override_t drag_cmd_left_key  = ko_make_basic(MOD_MASK_SHIFT | MOD_MASK_GUI, KC_J, LSG(KC_LEFT));
+const key_override_t drag_cmd_right_key = ko_make_basic(MOD_MASK_SHIFT | MOD_MASK_GUI, KC_L, LSG(KC_RIGHT));
+const key_override_t delete_line_key    = ko_make_basic(MOD_MASK_CTRL, KC_X, SGUI(KC_K));
+
+const key_override_t *key_overrides[] = {
+   [OVR_0] = &up_key,
+   [OVR_1] = &down_key,
+   [OVR_2] = &left_key,
+   [OVR_3] = &right_key,
+   [OVR_4] = &drag_up_key,
+   [OVR_5] = &drag_down_key,
+   [OVR_6] = &drag_left_key,
+   [OVR_7] = &drag_right_key,
+   [OVR_8] = &opt_up_key,
+   [OVR_9] = &opt_down_key,
+   [OVR_10] = &opt_left_key,
+   [OVR_11] = &opt_right_key,
+   [OVR_12] = &drag_opt_up_key,
+   [OVR_13] = &drag_opt_down_key,
+   [OVR_14] = &drag_opt_left_key,
+   [OVR_15] = &drag_opt_right_key,
+   [OVR_16] = &cmd_up_key,
+   [OVR_17] = &cmd_down_key,
+   [OVR_18] = &cmd_left_key,
+   [OVR_19] = &cmd_right_key,
+   [OVR_20] = &drag_cmd_up_key,
+   [OVR_21] = &drag_cmd_down_key,
+   [OVR_22] = &drag_cmd_left_key,
+   [OVR_23] = &drag_cmd_right_key,
+   [OVR_24] = &delete_line_key,
+};
