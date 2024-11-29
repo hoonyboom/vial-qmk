@@ -2,7 +2,7 @@ name: QMK Build
 on:
   push:
     branches:
-      - hyezo
+      - hoonyboom
   pull_request:
 
 jobs:
