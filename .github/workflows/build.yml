@@ -20,8 +20,7 @@ jobs:
       - name: Build QMK Firmware in Docker
         run: |
           docker pull qmkfm/qmk_cli:latest
-          docker run --rm -v $(pwd):/qmk_firmware qmkfm/qmk_cli qmk setup --yes
-          docker run --rm -v $(pwd):/qmk_firmware qmkfm/qmk_cli qmk compile -kb daisy/clacky40 -km hyezo
+          docker run --rm -v $(pwd):/qmk_firmware qmkfm/qmk_cli bash -c "git submodule update --init --recursive && qmk compile -kb daisy/clacky40 -km hyezo"
 
       - name: Upload Compiled Firmware
         uses: actions/upload-artifact@v3
