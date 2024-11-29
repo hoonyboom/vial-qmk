@@ -9,9 +9,9 @@ enum tap_dance_keycodes {
 typedef enum {
     ST, // single tap
     SH, // single hold
-    DT,
-    DH,
-    STT, // single tap twice
+    DT, // double tap
+    DH, // double hold
+    STT, // single tap twice (interrupted while double tapping)
     UNKNOWN,
     NONE,
 } td_state_t;

@@ -31,7 +31,7 @@ void esc_finished(tap_dance_state_t *state, void *user_data) {
             layer_on(3);
             break;
         case DT:
-            tap_code(KC_F16);
+            tap_code(KC_F16); // 바탕화면 보기
             break;
         case DH:
             break;
