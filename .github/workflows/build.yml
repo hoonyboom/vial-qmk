@@ -2,32 +2,32 @@ name: QMK Build
 on:
   push:
     branches:
-      - main
+      - hyezo
   pull_request:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up Secret
-      env:
-        SECRET_STRING: ${{ secrets.QMK_SECRET_STRING }}
-      run: echo "#define SECRET_STRING \"$SECRET_STRING\"" > config_env.h
+      - name: Set up Secret
+        env:
+          SECRET_STRING: ${{ secrets.QMK_SECRET_STRING }}
+        run: echo "#define SECRET_STRING \"$SECRET_STRING\"" > config_env.h
 
-    - name: Build QMK Firmware in Docker
-      run: |
-        docker pull qmkfm/qmk_cli:latest
-        docker run --rm -v $(pwd):/qmk_firmware qmkfm/qmk_cli qmk setup --yes
-        docker run --rm -v $(pwd):/qmk_firmware qmkfm/qmk_cli qmk compile -kb daisy/clacky40 -km hyezo
+      - name: Build QMK Firmware in Docker
+        run: |
+          docker pull qmkfm/qmk_cli:latest
+          docker run --rm -v $(pwd):/qmk_firmware qmkfm/qmk_cli qmk setup --yes
+          docker run --rm -v $(pwd):/qmk_firmware qmkfm/qmk_cli qmk compile -kb daisy/clacky40 -km hyezo
 
-    - name: Upload Compiled Firmware
-      uses: actions/upload-artifact@v3
-      with:
-        name: firmware
-        path: |
-          *.hex
-          *.bin
-          *.uf2
+      - name: Upload Compiled Firmware
+        uses: actions/upload-artifact@v3
+        with:
+          name: firmware
+          path: |
+            *.hex
+            *.bin
+            *.uf2
